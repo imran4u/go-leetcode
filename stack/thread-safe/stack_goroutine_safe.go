@@ -56,7 +56,7 @@ func main() {
 	fmt.Println(s.item)
 
 	// s.mu.Unlock()
-		panic("Hello I am panic")
+	panic("Hello I am panic")
 	fmt.Println("unlock called without lock")
 
 }
