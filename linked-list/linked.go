@@ -66,6 +66,33 @@ func (l *LinkedList) deleteByValue(value int) {
 	fmt.Println("value not found")
 }
 
+// Reverse reverses the linked list in O(n)
+func (ll *LinkedList) Reverse() {
+	if ll.head == nil || ll.head.next == nil {
+		return
+	}
+
+	var prev *Node
+	current := ll.head
+	// ll.tail = ll.head // Old head becomes new tail , if tail maintain
+
+	// At each step:
+
+	// 1. Save next
+	// 2. Reverse current.next
+	// 3. Move prev forward
+	// 4. Move current forward
+
+	for current != nil {
+		next := current.next
+		current.next = prev
+		prev = current
+		current = next
+	}
+
+	ll.head = prev
+}
+
 func (l LinkedList) Print() {
 
 	var sb strings.Builder
@@ -101,6 +128,10 @@ func main() {
 	list2.PostInsert(3)
 	list2.PostInsert(4)
 	list2.Print()
+	fmt.Println("Reverse list")
+	list2.Reverse()
+	list2.Print()
+
 	fmt.Println("After delete")
 	list2.deleteByValue(4)
 	list2.Print()
