@@ -8,7 +8,7 @@ func main() {
 }
 
 //Note: see the constrain "1 <= digits.length <= 100"
-// it is very large number so you can hold in int.
+// it is very large number so you can't hold in int.
 // so iterate from right and check for 9, if there is no 9, just increment and return
 // in case of all 9, ex 99, append 1 from begning and then return.
 

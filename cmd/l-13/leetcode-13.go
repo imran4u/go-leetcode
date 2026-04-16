@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	s := "IV"
+	s := "XCV"
 
 	result := convertRomanToDecimal(s)
 	fmt.Println(result)
