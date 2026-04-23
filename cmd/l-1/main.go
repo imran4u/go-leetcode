@@ -28,18 +28,16 @@ func twoSum(nums []int, target int) []int {
 	for index, value := range nums {
 
 		mI, ok := m[value]
-		if ok {
+		if ok && mI != index {
 
 			if mI < index {
 				result[0] = mI
 				result[1] = index
-				break
 			} else if mI > index {
 				result[0] = index
 				result[1] = mI
-				break
 			}
-
+			break
 		}
 
 	}
