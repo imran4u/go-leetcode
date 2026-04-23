@@ -34,7 +34,6 @@ func searchInsert(nums []int, target int) int {
 		} else {
 
 			left = mid + 1
-
 		}
 		mid = (left + right) / 2
 	}
