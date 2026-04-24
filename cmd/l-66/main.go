@@ -5,6 +5,8 @@ import "fmt"
 func main() {
 	digits := []int{2, 4, 9} // result [2,5,0]
 	fmt.Println(plusOne(digits))
+
+	fmt.Println("änother way", plusOneA(digits))
 }
 
 //Note: see the constrain "1 <= digits.length <= 100"
@@ -29,4 +31,18 @@ func plusOne(digits []int) []int {
 	digits = append([]int{1}, digits...)
 
 	return digits
+}
+
+func plusOneA(digits []int) []int {
+
+	for i := len(digits) - 1; i >= 0; i-- {
+		digits[i]++
+		if digits[i] == 10 {
+			digits[i] = 0
+		} else {
+			return digits
+		}
+	}
+	// all are 9 case
+	return append([]int{1}, digits...)
 }
