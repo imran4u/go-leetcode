@@ -32,17 +32,18 @@ func isAnagram(s string, t string) bool {
 	}
 	for _, r := range t {
 		m[r]--
-		//early exit here it is may not required here. 
-		if m[r] < 0 { // for anagram it should be always >=0, 
+		//early exit here it is may not required here.
+		if m[r] < 0 { // for anagram it should be always >=0,
 			return false
 		}
 	}
 
-	for _, v := range m {
-		if v!=0 {
-			return  false
-		}
-	}
+	// This is not requried as len is going to check first.
+	// for _, v := range m {
+	// 	if v!=0 {
+	// 		return  false
+	// 	}
+	// }
 
 	return true
 }
